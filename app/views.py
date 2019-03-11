@@ -7,6 +7,7 @@ ButtonPressed = 0
 @app.route('/button', methods=["GET", "POST"])
 def button():
     if request.method == "POST":
+        print(request.form)
         # need to get the info from the form and process it here
         return render_template("results.html", ButtonPressed = ButtonPressed)
         # I think you want to increment, that case ButtonPressed will be plus 1.
