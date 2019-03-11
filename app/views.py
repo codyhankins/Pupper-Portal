@@ -19,12 +19,14 @@ def button():
         protective = request.form.getlist('protective')
         groom = request.form.getlist('groom')
 
+        # create candidate list of dogs from ontology results
+        dogList = ['golden-retriever']
+        
+        # query the breed dictionary here to get the individual dog qualities
 
-        # create candidate list of dogs here to put in render for results page
+        # pass the collection of dictionaries to the render template method
 
-        return render_template("results.html", ButtonPressed = ButtonPressed)
-        # I think you want to increment, that case ButtonPressed will be plus 1.
-    return render_template("button.html", ButtonPressed = ButtonPressed)
+        return render_template("results.html", dog_list = None)
 
 @app.route('/')
 def index():
