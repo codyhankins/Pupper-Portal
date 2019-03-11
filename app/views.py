@@ -7,8 +7,21 @@ ButtonPressed = 0
 @app.route('/button', methods=["GET", "POST"])
 def button():
     if request.method == "POST":
-        print(request.form)
-        # need to get the info from the form and process it here
+        # all the data from the form can be found at request.form
+        size = request.form.getlist('size')
+        allergic = request.form.getlist('allergic')
+        active = request.form.getlist('active')
+        trainable = request.form.getlist('trainable')
+        others = request.form.getlist('others')
+        shed = request.form.getlist('shed')
+        kids = request.form.getlist('kids')
+        apartment = request.form.getlist('apartment')
+        protective = request.form.getlist('protective')
+        groom = request.form.getlist('groom')
+
+
+        # create candidate list of dogs here to put in render for results page
+
         return render_template("results.html", ButtonPressed = ButtonPressed)
         # I think you want to increment, that case ButtonPressed will be plus 1.
     return render_template("button.html", ButtonPressed = ButtonPressed)
