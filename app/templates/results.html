@@ -1,1 +1,13 @@
-Testing this results page
+{% extends "base.html" %}
+{% from 'macros.html' import result_block %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h2>Results</h2>
+  <p class="lead">We think your best matches are: </p>
+
+  {{ result_block("Golden Retriever", "sicko mode", "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/30175902/Affenpinscher-copy-2.jpg") }}
+  
+
+</div>
+{% endblock %}
