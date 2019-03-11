@@ -8,6 +8,7 @@
 
 <h3> Let's get it started! </h3>
 
+<form method="POST" action="/button">
 <p>1. Select your ideal dog size:<BR>
   <input type="checkbox" name="size" value="large">Large<BR>
   <input type="checkbox" name="size" value="medium">Medium <BR>
@@ -62,7 +63,9 @@
   <input type="checkbox" name="groom" value="daily">Daily <BR>
 </p>
 
-<button type="button">Find me a homie!</button>
+<button type="submit">Find me a homie!</button>
+</form>
+
 
 </div>
 {% endblock %}
