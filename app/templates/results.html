@@ -6,8 +6,14 @@
   <h2>Results</h2>
   <p class="lead">We think your best matches are: </p>
 
-  {{ result_block("Golden Retriever", "Mega chiller", "https://cdn.akc.org/Marketplace/Breeds/Golden_Retriever_SERP.jpg", "Intelligent, friendly, and devoted.", "Eager To Please" ) }}
-  
+  {% if dog_list|length>0 %}
+    {% for dog in dog_list %}
+        {{ result_block(dog, dog_list[dog][0][0], dog_list[dog][2][0], dog_list[dog][1][0]) }}
+    {% endfor %} 
+  {% else %}
+    <h4>Oops! Your search was too specific. Go back and uncheck stuff that doesn't really matter to you!</h4> <BR>
+    <button onclick="window.history.go(-1)">Back!</button>
+  {% endif %}
 
 </div>
 {% endblock %}

@@ -1,9 +1,12 @@
-{% macro result_block(breed, description, img_source, personality, trainability) %}
-<div>
-    <img src="{{ img_source }}" height="200" width="300">
+{% macro result_block(breed, description, img_source, personality) %}
+<div class = "post-container">
+    <div class= "post-thumb"> <img src="{{ img_source }}" height="240" width="330"></div>
+    <div class = "post-content">
     <h3 class="puppy">{{ breed }}</h3>
     <h4>Description:</h4>
     {{ description }}
-    Personality: {{ personality }} Trainability: {{ trainability }}
+    <h4>Personality</h4>
+    <div> {{personality}}</div>
+    </div> 
 </div>
 {% endmacro %}
