@@ -147,12 +147,11 @@ def button():
         
         #print(final_results_dict)
         dogs_to_display = {k: final_results_dict[k] for k in list(final_results_dict)[:10]}
-        print(type(dogs_to_display))
         # query the breed dictionary here to get the individual dog qualities
         #dogs_to_display = 
         # pass the collection of dictionaries to the render template method
 
-        return render_template("results.html", dog_list = dogs_to_display)
+        return render_template("results.html", dog_list = dogs_to_display, total_dogs = len(final_results_dict))
 
 @app.route('/')
 def index():
